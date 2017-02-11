@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Diro</title>
+    <meta name="description" content="Your Description Here">
+    <meta name="keywords" content="bootstrap themes, portfolio, responsive theme">
+    <meta name="author" content="ThemeForces.Com">
+    
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,900,400,200,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <style type="text/css">
+    	.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+    </style>
+   
+
+    
+  </head>
+  <body onload="myFunction()">
+    <div id="tf-home">
+        <div class="overlay">
+            <div id="sticky-anchor"></div>
+            <nav id="tf-menu" class="navbar navbar-default">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                   
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                   
+                </div><!-- /.container-fluid -->
+            </nav>
+
+            <div class="container">
+                <div class="content">
+                    <h1 id="x">You are not connected</h1>
+                    <div id="s"></div>
+                    <br>
+                    <a href="xyz.html" class="btn btn-primary my-btn" id="abc" style="visibility:hidden">Restaurant</a>
+                    <a href="#tf-portfolio" class="btn btn-primary my-btn2" id="cab" style="visibility:hidden">Bar1</a>
+                    <a href="#tf-portfolio" class="btn btn-primary my-btn2" id="ca" style="visibility:hidden">Restaurant2</a>
+                    <a href="#tf-portfolio" class="btn btn-primary my-btn2" id="c" style="visibility:hidden">Bar2</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="popup" style="visibility:hidden; background:#000000; height:50dp">
+  		<span class="popuptext" id="myPopup" style="color:white;">Our upcoming offfers : Get 25% discount on four donuts....</span>
+	</div>
+
+     <script type="text/javascript">
+
+function myFunction(){
+	$(document).ready(function(){
+	
+		$("h1").hover(function(){
+			$(document).ready(function () {
+			
+	
+	window.setTimeout(function () {
+          	document.getElementById("abc").style.visibility = "visible";
+          	document.getElementById("cab").style.visibility = "visible";
+          	          	document.getElementById("ca").style.visibility = "visible";
+
+          	document.getElementById("c").style.visibility = "visible";
+          	          	document.getElementById("popup").style.visibility = "visible";
+
+
+          	playSound('back to december')
+			document.getElementById("x").innerHTML = "You are now connected";
+
+    }, 5000);
+});
+});
+
+});
+
+	function myFunc() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+
+}
+     	
+     	 /*	$(document).ready(function () {
+     	 		alert('abc');*/
+
+     	 	
+    
+    /*window.setTimeout(function () {
+          	document.getElementById("abc").style.visibility = "visible";
+
+    }, 5000);*/
+
+   
+ 
+            function playSound(filename){   
+                document.getElementById("s").innerHTML='<audio autoplay="autoplay"><source src="' + filename + '.mp3" type="audio/mpeg" /><source src="' + filename + '.ogg" type="audio/ogg" /><embed hidden="true" autostart="true" loop="false" src="' + filename +'.mp3" /></audio>';
+            }
+
+    </script>
+
+  
+
+   
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <!-- Javascripts
+    ================================================== -->
+    <script type="text/javascript" src="js/main.js"></script>
+
+  </body>
+</html>
